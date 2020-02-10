@@ -1,0 +1,16 @@
+
+        //Configure the following in startup.cs
+        
+        services.Configure<RazorViewEngineOptions>(x =>
+            {
+                x.ViewLocationFormats.Clear();
+                x.ViewLocationFormats.Add("/Features/{1}/{0}" + RazorViewEngine.ViewExtension);
+                x.ViewLocationFormats.Add("/AreaViews/Shared/{0}" + RazorViewEngine.ViewExtension);
+
+
+                x.AreaViewLocationFormats.Clear();
+                x.AreaViewLocationFormats.Add("/AreaViews/{1}/{0}" + RazorViewEngine.ViewExtension);
+                x.AreaViewLocationFormats.Add("/AreaViews/{1}/Shared/{0}" + RazorViewEngine.ViewExtension);
+                x.AreaViewLocationFormats.Add("/AreaViews/Shared/{0}" + RazorViewEngine.ViewExtension);
+
+            });
